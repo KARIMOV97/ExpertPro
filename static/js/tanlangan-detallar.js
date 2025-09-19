@@ -31,7 +31,7 @@ document.querySelector('button[name="detallar-tasdiqlash"]').addEventListener("c
     list.innerHTML = ""; // eski elementlarni tozalash
 
     // Ichki elementlarini frontendga chiqarish
-    fetch(`/api/ichki-detail-coefficient/?car_model_id=${carModelId}`)
+    fetch(`https://expertpro-production.up.railway.app/api/ichki-detail-coefficient/?car_model_id=${carModelId}`)
         .then(res => res.json())
         .then(data => {
             data.forEach(item => {
@@ -70,7 +70,7 @@ document.querySelector('button[name="detallar-tasdiqlash"]').addEventListener("c
         });
 
     // Kuzov elementlarini frontendga chiqarish
-    fetch(`/api/kuzov-detail-coefficient/?car_model_id=${carModelId}`)
+    fetch(`https://expertpro-production.up.railway.app/api/kuzov-detail-coefficient/?car_model_id=${carModelId}`)
         .then(res => res.json())
         .then(data => {
             data.forEach(item => {

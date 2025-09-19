@@ -1,7 +1,7 @@
 import { apiGet, apiPost, apiPut, apiDelete, showBootstrapAlert } from './functions.js';
 const API = {}; // bu object ichida endpointlar bo‘ladi
 
-fetch("/api")
+fetch("https://expertpro-production.up.railway.app/api")
   .then(res => res.json())
   .then(data => {
     for (const [key, url] of Object.entries(data)) {

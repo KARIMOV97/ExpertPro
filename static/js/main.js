@@ -59,7 +59,7 @@ makeCalendar(carYearChoose2, 2015, 2)
 
 async function loadGeometrikMurakkablikOptions() {
     try {
-        const response = await fetch('/api/kuzov-geometrik-murakkablik'); // endpoint o'zgartiring
+        const response = await fetch('https://expertpro-production.up.railway.app/api/kuzov-geometrik-murakkablik'); // endpoint o'zgartiring
         const data = await response.json();
         const select = document.querySelector('.geometrik-murakkablik-select');
         select.innerHTML = ''; // eski optionlarni tozalash
