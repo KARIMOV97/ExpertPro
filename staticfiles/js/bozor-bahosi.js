@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     functionalYemirilish = 20
                 }
                 try {
-                    const response = await fetch(`/api/kuzov-turi-yemirilish/?kuzov_id=${kuzovId}`);
+                    const response = await fetch(`https://expertpro-production.up.railway.app/api/kuzov-turi-yemirilish/?kuzov_id=${kuzovId}`);
                     const data = await response.json();
                     kuzovCoefficient = data[0].coefficient
                 } catch (error) {

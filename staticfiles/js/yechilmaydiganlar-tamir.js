@@ -1,8 +1,8 @@
 // UL elementni olish
 const ul = document.querySelector(".yechilmaydigan-detallar-tamir-ul");
 
-// Birinchi fetch: Yechilmaydigan detallarni olish
-fetch("http://127.0.0.1:8000/api/yechilmaydigan-detallar-tamir/")
+// Birinchi fetch: https://expertpro-production.up.railway.app/echilmaydigan detallarni olish
+fetch("https://expertpro-production.up.railway.app/api/yechilmaydigan-detallar-tamir/")
   .then(response => response.json())
   .then(data => {
     ul.innerHTML = ""; // eski elementlarni tozalash
@@ -33,8 +33,8 @@ fetch("http://127.0.0.1:8000/api/yechilmaydigan-detallar-tamir/")
       // DOM ga qo‘shilgandan keyin selectni olamiz
       const select = li.querySelector(".tamirlash-darajasi-select");
 
-      // Endi ikkinchi fetch: Tamirlash darajasi yuklash
-      fetch("http://127.0.0.1:8000/api/tamirlash-darajasi/")
+      // Endi ikkinchi fetch: https://expertpro-production.up.railway.app/amirlash darajasi yuklash
+      fetch("https://expertpro-production.up.railway.app/api/tamirlash-darajasi/")
         .then(res => res.json())
         .then(darajalar => {
           select.innerHTML = ""; // eski optionlarni tozalash
