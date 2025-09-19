@@ -238,7 +238,6 @@ class KuzovTuriYemirilishViewSet(viewsets.ModelViewSet):
 
 
 class TanlanganDetalViewSet(viewsets.ModelViewSet):
-    TanlanganDetal.objects.all().delete()
     serializer_class = TanlanganDetalSerializer
     queryset = TanlanganDetal.objects.all()
     
