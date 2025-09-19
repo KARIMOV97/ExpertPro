@@ -93,7 +93,7 @@ class IchkiDetailCoefficient(models.Model):
 
 # Tamirlash Darajasi
 class TamirlashDarajasi(models.Model):
-    level = models.CharField()
+    level = models.CharField(max_length=100)
 
     class Meta:
         verbose_name = "Tamirlash Darajasi"
