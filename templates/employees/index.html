@@ -1,0 +1,719 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'bootstrap-5.3.3-dist/css/bootstrap.min.css' %}">
+</head>
+<body> 
+<h1 class="firm-name text-center">invest expert pro</h1>
+<div class="container rounded py-5">
+
+    
+    <form  method="post" action="">
+       {% csrf_token %}
+        <div id="expert-container">
+          <label class="d-block form-label">
+            <h6>Expert<pre>*</pre></h6>
+            <select name="" id="expert" class="form-select expert-select mb-3"></select>
+          </label>
+        </div>
+        <div class="mb-4">
+            <div class="row">
+              <div class="mb-3 col">
+                <label class="form-label">
+                  <h6>Xulosa raqami<pre>*</pre></h6>
+                  <input type="text" class="form-control" id="xulosa-raqami">
+                </label>
+              </div>
+              <div class="mb-3 col">
+                <label class="form-label">
+                  <h6>Xulosa chiqish sanasi<pre>*</pre></h6>
+                  <input type="text" class="form-control" id="xulosa-sanasi">
+                </label>
+              </div>
+              <div class="mb-3 col">
+                <label class="form-label">
+                  <h6>Ariza kelib tushgan sana<pre>*</pre></h6>
+                  <input type="text" class="form-control" id="ariza-sanasi">
+                </label>
+              </div>
+            </div>
+               
+        </div>
+        <div class="all-identification">
+            <!-- idenfication-end -->
+
+           
+            <h1 class="title">Identifikatsiya:</h1>
+            <div class="section identification mb-5">
+                <div class="row g-2">
+                  <!-- kuzov accordion -->
+                    <div class="col-md">
+                      <label class="w-100">
+                        <div class="form-floating">
+                            <h6>Avtamabil modelini tanlang <pre>*</pre></h6>
+                            <div class="accordion accordion-flush" id="accordionFlushModel">
+                              <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingModel">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseModel" aria-expanded="false" aria-controls="flush-collapseModel">Model</button>
+                                </h2>
+                                <div id="flush-collapseModel" class="accordion-collapse collapse" aria-labelledby="flush-headingModel" data-bs-parent="#accordionFlushModel">
+                                  <div class="accordion-body">
+                                    <div id="car-models-container"></div>
+                                    
+                                    <!-- Element qoʻshish qismi -->
+                                      <!-- <div class="mt-4 add-element-in-accordion-box">
+                                        <div class="input-group accordion-add-element-height add-element-for-model">
+                                          <input type="text" name="model_name" class="form-control add-model-name" placeholder="Matn kiriting" style="flex: 2;">
+                                          <button class="btn btn-primary button-for-hover model-add-button" type="button">Qo‘shish</button>
+                                          <div class="alert-box">
+                                            <div id="formAlert" class="alert alert-danger d-none" role="alert">
+                                              Ma'lumotlarni to'ldiring!
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div> -->
+                                  </div>  
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                      </label>
+                    </div>
+                  <!-- yil input -->
+                    <label class="pt-3 pb-3">
+                      <h6>Yilni tanlang <pre>*</pre></h6>
+                      <div class="calendar-box-1">
+
+                      </div>
+                    </label>
+                  <!-- rang input -->
+                    <div class="mb-3">
+                        <div class="mb-3">
+                          <div class="mb-3">
+                            <label class="form-label">
+                              <h6>Rangni kiriting <pre>*</pre></h6>
+                              <input type="text" class="form-control" id="color-of-the-car">
+                            </label>
+                          </div>
+                        </div>
+                    </div>
+                  <!-- kuzov accordion -->
+                  <h6>Kuzov turini tanlang<pre>*</pre></h6>
+                  <div id="kuzov-container"></div>
+                    <div class="">
+                        <label class="form-label">
+                            <h6 class="pt-4 pb-1">Davlat raqamini yozing <pre>*</pre></h6>
+                            <input type="text" class="form-control uppercase" id="car-number">
+                        </label>
+                    </div>
+                    <div class="">
+                        <label class="form-label">
+                            <h6>F.I.O <pre>*</pre></h6>
+                            <input type="text" class="form-control" id="full-name-input">
+                        </label>
+                    </div>
+                      <div class="radio d-flex flex-column pt-4">
+                      <h6 class="pe-3">Texpassport<pre>*</pre></h6>
+                      <div class="d-flex texpassport-box w-100 p-1">
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            taqqoslandi
+                            <input class="form-check-input texpassport-radiobox" type="radio" name="status-texpassport" value="taqqoslandi" id="taqqoslandi" checked>
+                          </label>
+                        </div>
+                        <div class="form-check ms-3">
+                          <label class="form-check-label">
+                            taqqoslanmadi
+                            <input class="form-check-input texpassport-radiobox" type="radio" name="status-texpassport" value="taqqoslanmadi" id="taqqoslanmadi">
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="radio d-flex flex-column pt-4">
+                      <h6 class="pe-3">Odometr ko'rsatkichi <pre>*</pre></h6>
+                      <div class="d-flex soz-nosoz-box w-100 p-1">
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            soz
+                            <input class="form-check-input odometr-radiobox" type="radio" name="status" value="soz" id="radioSoz" checked>
+                          </label>
+                        </div>
+                        <div class="form-check ms-3">
+                          <label class="form-check-label">
+                            nosoz
+                            <input class="form-check-input odometr-radiobox" type="radio" name="status" value="nosoz" id="radioNosoz">
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row g-3 pt-4">
+                      <label class="col ps-0 pe-0 mb-3" id="odometrInputWrapper">
+                        <h6>Odometr ko'rsatkichi <pre>*</pre></h6>
+                        <input type="number" class="form-control disabled-input odometr-korsatkichi-input" id='odometrKorsatkichi' aria-label="First name">
+                      </label>
+                      <label class="p-0" id="metodikaSelectWrapper">
+                        <h6 class="mt-3">Odometr meto'dikasi bo'yicha <pre>*</pre></h6>
+                        <select disabled class="form-select mt-0 mb-3 disabled-sellect odometr-korsatkichi-input-norma" id="odometr-norma" aria-label="Default select example">
+                          <option selected value="0"></option>
+                          <option value="18">18.000km</option>
+                          <option value="35">35.000km</option>
+                          <option value="90">90.000km</option>
+                        </select>
+                      </label>
+                    </div>
+                    <div class="">
+                        <label class="form-label">
+                            <h6>VIN kodni kiriting<pre>*</pre></h6>
+                            <input type="text" class="form-control uppercase vin-code-input" id="formGroupExampleInput">
+                        </label>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">
+                            <h6>Dvigatel raqami<pre>*</pre></h6>
+                            <input type="text" class="form-control dvigatel-number-input" id="formGroupExampleInput">
+                        </label>
+                    </div>
+                    <div class="mb-4">
+                      <label class="form-label">
+                        <h6>Texpassport berilgan joy<pre>*</pre></h6>
+                        <input type="text" class="form-control" id="texpassport-berilgan-joy">
+                      </label>
+                    </div>
+                </div>
+                <!-- alert -->
+                <div class="alert-box">
+                </div>
+            </div>
+            <!-- / idenfication-end -->
+            
+            
+            <!-- external-view -->
+            <h1 class="title">Tashqi ko'rik identifikatsiya:</h1>
+            <div class="section external-view mb-3">
+                  <label class="d-block w-100">
+                    <h6>Uzatmalar qutisi<pre>*</pre></h6>
+                    <select class="form-select mb-4 mt-3 uzatmalar-qutisi" aria-label="Default select example">
+                      <option selected value="1">АУЎҚ/УЎҚ</option>
+                      <option value="2">MУЎҚ/УЎҚ</option>
+                    </select>
+                  </label>
+                  <div class="mb-4 w-100">
+                  <label class="form-label">
+                    <h6>Fotoaparat rusumi<pre>*</pre></h6>
+                    <input type="text" class="form-control" id="fotoaparat-rusumi">
+                  </label>
+                </div>
+                </div>
+            <!-- / external-view-end -->
+
+
+            <!-- Price -->
+          <h1 class="title">Bozor bahosi:</h1>
+          <div class="section mt-3 bozor-bahosi-section">
+            <div class="radio pb-4 is-manufacturing-stoped">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        Ishlab chiqarilmoqda
+                        <input class="form-check-input" value="toxtamadi" type="radio" name="production" checked id="radioDefault1">
+                    </label>
+                </div>
+                <div class="form-check ms-3 is-manufacturing-stoped">
+                    <label class="form-check-label">
+                        Ishlab chiqarish tohtatilgan
+                        <input class="form-check-input" value="toxtadi" type="radio" name="production" id="radioDefault2">
+                    </label>
+                </div>                     
+            </div>
+            <div class="calendar-box-2">
+            </div>
+            <div class="row analogue">
+              <p>Analig-1</p>
+              <div class="price">
+                <label class="col inputs">
+                  <h6>Odometr korsatkichi<pre>*</pre></h6>
+                  <input type="text" class="form-control ishlab-chiqarish-toxtatilgan-inputs money" id="analog1-odometr-korstkichi">
+                </label>
+                <label class="col inputs">
+                  <h6>Tannarxi <pre>*</pre></h6>
+                  <input type="text" class="form-control ishlab-chiqarish-toxtatilgan-inputs money analog1" id="analog1-tan-narxi">
+                </label>
+              </div>
+            </div>
+            <div class="row analogue">
+              <p>Analig-2</p>
+              <div class="price">
+                <label class="col inputs">
+                  <h6>Odometr korsatkichi <pre>*</pre></h6>
+                  <input type="text" class="money form-control ishlab-chiqarish-toxtatilgan-inputs ishlab-chiqarish-toxtatilgan-inputs" id="analog2-odometr-korstkichi">
+                </label>
+                <label class="col inputs">
+                  <h6>Tannarxi <pre>*</pre></h6>
+                  <input type="text" class="form-control ishlab-chiqarish-toxtatilgan-inputs money ishlab-chiqarish-toxtatilgan-inputs analog2" id="analog2-tan-narxi">
+                </label>
+              </div>
+            </div>
+            <div class="row analogue">
+              <p>Analig-3</p>
+              <div class="price">
+                <label class="col inputs">
+                  <h6>Odometr korsatkichi <pre>*</pre></h6>
+                  <input type="text" class="money form-control ishlab-chiqarish-toxtatilgan-inputs" id="analog3-odometr-korstkichi">
+                </label>
+                <label class="col inputs">
+                  <h6>Tannarxi <pre>*</pre></h6>
+                  <input type="text" class="money form-control analog3 ishlab-chiqarish-toxtatilgan-inputs" id="analog3-tan-narxi">
+                </label>
+              </div>
+            </div>  
+            <div>
+              <select class="form-select savdolashish-koefitsienti ishlab-chiqarish-toxtatilgan-inputs" id="scoreSelect">
+                <option value="90">90%</option>
+                <option value="91">91%</option>
+                <option value="92">92%</option>
+                <option value="93">93%</option>
+                <option value="94">94%</option>
+                <option value="95">95%</option>
+              </select>
+            </div>  
+            <label class="w-100 mb-4 mt-4">
+              <h6>Yangisining narxi <pre>*</pre></h6>
+              <input type="text" class="money form-control yangisining-narxi ishlab-chiqarish-toxtatilgan-inputs">
+            </label>
+            <div class="row mb-4">
+              <div class="row pe-0">
+                <label class="col">
+                  <h6>O'rtacha narxi <pre>*</pre></h6>
+                  <input disabled type="text" class="form-control ortacha-narx">
+                </label>
+                <label class="col pe-0">
+                  <h6>Jismoniy eskirish foizi<pre>*</pre></h6>
+                  <input disabled type="text" class="form-control jismoniy-eskirish">
+                </label>
+                <label class="col pe-0">
+                  <h6>Bozor bahosi<pre>*</pre></h6>
+                  <input disabled type="text" class="form-control bozor-bahosi">
+                </label>
+              </div>                
+            </div>
+            <div class="mb-4">
+              <label class="d-block">
+                <h6>Tanlanadigan jismoniy eskirish<pre>*</pre></h6>
+                <input type="text" class="form-control jismoniy-eskirish-manual" disabled>
+              </label>
+            </div>
+            <div class="d-flex justify-content-between">
+              <button class="btn btn-primary button-for-hover hisoblash">Hisoblash</button>
+              <div id="formAlert" class="alert alert-danger d-none" role="alert"></div>
+            </div>
+          </div>
+
+
+            <!-- / Price-end -->
+
+            <!-- salary -->
+
+            <!-- usta haqqi section -->
+             
+            <!-- Usta haqqi title -->
+            <h1 class="title">Usta haqqi:</h1>
+            <div class="section mb-3">
+                <label class="form-label">
+                    <h6>Ish haqqi soatiga <pre>*</pre></h6>
+                    <input type="text" class="form-control usta-haqqi" value="35000 " id="formGroupExampleInput">
+                </label>
+            </div>
+
+            <div class="section list">
+              <div id="accordion-box" class="ichki-kuzov-accordion">
+                <div class="accordion accordion-flush kuzov-yechib-ornatish-container" id="accordionFlushOne">
+                  <div class="accordion-item">
+                    <!-- Kuzov accordion list -->
+
+                    <!-- Kuzov accordion list title -->
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Kuzov
+                      </button>
+                    </h2>
+
+                    <!-- Kuzov accordion list body -->
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordion-box">
+                      <div class="accordion-body">
+                      <div class="kuzov-yechib-ornatish-accordion-body">     
+                        <p>Iltimos modelni tanlang</p>
+                      </div>                  
+                      </div>
+                    </div>
+                    <!-- Kuzov accordion list -->
+                  </div>
+                </div>
+
+                <div class="accordion accordion-flush kuzov-yechib-ornatish-container" id="accordionFlushTwo">
+                  <div class="accordion-item">
+                    <!-- Kuzov accordion list -->
+
+                    <!-- Kuzov accordion list title -->
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Ichki detallar
+                      </button>
+                    </h2>
+
+                    <!-- Kuzov accordion list body -->
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordion-box">
+                      <div class="accordion-body ichki-detallar-accordion-body">
+                        <p>Iltimos modelni tanlang</p>                      
+                      </div>
+                    </div>
+                    <!-- Kuzov accordion list -->
+                  </div>
+                </div>
+              </div>
+              <div class="tasdiqlash-box text-center">
+                <button class="btn btn-primary button-for-hover mt-5" type="button" name="detallar-tasdiqlash">Tasdiqlash</button>
+              </div>
+            </div>
+            
+
+
+
+
+            <!-- Ta'mirlash ishlari section -->
+
+            <h1 class="title pt-4 pb-4">Tamirlash ishlari:</h1>
+            <div class="section Repair-work">
+              <label class="d-block">
+                <h6>Kuzovning geometrik murakkablik shakli<pre>*</pre></h6>
+                <select class="form-select mb-4 geometrik-murakkablik-select" aria-label="Default select example">
+                   
+                  </select>
+              </label>
+                  <div class="accordion accordion-flush" id="third-accordionFlushExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#third-flush-collapseOne" aria-expanded="false" aria-controls="third-flush-collapseOne">
+                          Yechiladigan
+                        </button>
+                      </h2>
+                      <div id="third-flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#third-accordionFlushExample">
+                        <div class="accordion-body">
+                          <div><span style="margin-left: 28px;">B</span><span class="" style="margin-left: 36px;">T</span></div>
+                          <ul class="yechiladigan-detallar-tamir-ul ps-0">
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#third-flush-collapseTwo" aria-expanded="third-false" aria-controls="flush-collapseTwo">
+                          Yechilmaydigan
+                        </button>
+                      </h2>
+                      <div id="third-flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#third-accordionFlushExample">
+                        <div class="accordion-body">
+                          <div><span style="margin-left: 28px;">B</span><span class="" style="margin-left: 36px;">T</span></div>
+                          <ul class="materials p-0 align-items-center yechilmaydigan-detallar-tamir-ul">  
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="boyoqlash-chekck-box text-center my-5">
+                    <button type="button" class="btn btn-primary button-for-hover boyoqlash-check-button">Tasdiqlash</button>
+                  </div>
+            </div>
+            
+
+
+            <!-- painting -->
+
+
+            <h1 class="title" >Bo'yoqlash ishlari:</h1>
+            <div class="section mb-3">
+              <div class="row pe-0">
+                <label class="col">
+                  <h6>Bo'yoqlash<pre>*</pre></h6>
+                  <input type="text" disabled class="form-control boyoqlash-input">
+                </label>
+                <label class="col pe-0">
+                  <h6>Silliqlash<pre>*</pre></h6>
+                  <input type="text" disabled class="form-control silliqlash-input">
+                </label>
+              </div>  
+            </div>
+
+            <div class="section mb-3">
+                  <label class="form-label">
+                      <h6>Umumiy narxi usta haqqi<pre>*</pre></h6>
+                      <input type="text" class="form-control" disabled id="umumiy-narxi-usta-haqqi">
+                  </label>
+              </div>
+            <!-- / painting -->
+
+
+            <!-- spare parts -->
+
+
+            <h1 class="title mt-3" >Extiyot qisimlar:</h1>
+            <div>
+              <ul class="spares p-0 ">
+              </ul>
+              <div class="extiyot-qisimlari-check text-center d-none mb-4">
+                <button class="btn btn-primary button-for-hover extiyot-qisimlari-check-button" type="button">Tasdiqlash</button>
+              </div>
+             <div class="section mb-3">
+              <div class="row pe-0">
+                <label class="col">
+                  <h6>Umumiy narx extiyot qisimlar<pre>*</pre></h6>
+                  <input type="text" class="form-control" disabled id="umumiy-narx-extioytqisimlar">
+                </label>
+                <label class="col pe-0">
+                  <h6>Jismoniy eskirishdan keyingi narx<pre>*</pre></h6>
+                  <input type="text" class="form-control" disabled id="jismoniy-eskirishdan-keyingi-narx">
+                </label>
+              </div>  
+            </div>
+            </div>
+
+
+            <!-- spare parts -->
+
+            <h1>Tamirlashda ishlatiladigan materiallar:</h1>
+            <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  Materiallar
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body p-0">
+                  <ul class="materials-list-last p-0">
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-4">
+            <button class="btn btn-primary button-for-hover btn-materiallar-check" type="button">Tasdiqlash</button>
+          </div>
+          <div>
+            <label class="w-100 mt-4">
+                   <h6>Umumiy narx materiallar<pre>*</pre></h6>
+                   <input type="text" class="form-control" disabled id="umumiy-narx-materiallar">
+             </label>
+          </div>
+           <div>
+            <label class="w-100 mt-4">
+                   <h6>Natijaviy summa<pre>*</pre></h6>
+                   <input type="text" class="form-control" disabled id="natijaviy-summa">
+             </label>
+          </div>
+        </div>
+        <div class="mt-4">
+      <div class="mb-2 text-center">Rasm yuklash:</div>
+     <div class="row g-2" id="imageGrid">
+        <!-- Birinchi qator -->
+        <div class="col-12">
+          <div class="row">
+            <div class="col-4">
+              <div class="img-upload-slot position-relative">
+                <input type="file" accept="image/*" class="file-input" id="img1">
+                <label for="img1" class="icon d-flex justify-content-center align-items-center w-100 h-100">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="40" height="40">
+                    <path fill="rgb(107, 107, 107)"
+                      d="M352 128C352 110.3 337.7 96 320 96C302.3 96 
+                      288 110.3 288 128L288 288L128 288C110.3 288 
+                      96 302.3 96 320C96 337.7 110.3 352 128 
+                      352L288 352L288 512C288 529.7 302.3 544 
+                      320 544C337.7 544 352 529.7 352 512L352 
+                      352L512 352C529.7 352 544 337.7 544 
+                      320C544 302.3 529.7 288 512 288L352 
+                      288L352 128z"/>
+                  </svg>
+                </label>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="img-upload-slot position-relative">
+                <input type="file" accept="image/*" class="file-input" id="img2" hidden>
+                <label for="img2" class="icon d-flex justify-content-center align-items-center w-100 h-100">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="40" height="40">
+                    <path fill="rgb(107, 107, 107)"
+                      d="M352 128C352 110.3 337.7 96 320 96C302.3 96 
+                      288 110.3 288 128L288 288L128 288C110.3 288 
+                      96 302.3 96 320C96 337.7 110.3 352 128 
+                      352L288 352L288 512C288 529.7 302.3 544 
+                      320 544C337.7 544 352 529.7 352 512L352 
+                      352L512 352C529.7 352 544 337.7 544 
+                      320C544 302.3 529.7 288 512 288L352 
+                      288L352 128z"/>
+                  </svg>
+                </label>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="img-upload-slot position-relative">
+                <input type="file" accept="image/*" class="file-input" id="img3" hidden>
+                <label for="img3" class="icon d-flex justify-content-center align-items-center w-100 h-100">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="40" height="40">
+                    <path fill="rgb(107, 107, 107)"
+                      d="M352 128C352 110.3 337.7 96 320 96C302.3 96 
+                      288 110.3 288 128L288 288L128 288C110.3 288 
+                      96 302.3 96 320C96 337.7 110.3 352 128 
+                      352L288 352L288 512C288 529.7 302.3 544 
+                      320 544C337.7 544 352 529.7 352 512L352 
+                      352L512 352C529.7 352 544 337.7 544 
+                      320C544 302.3 529.7 288 512 288L352 
+                      288L352 128z"/>
+                  </svg>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Ikkinchi qator -->
+        <div class="col-12 mt-2">
+          <div class="row">
+            <div class="col-4">
+              <div class="img-upload-slot position-relative">
+                <input type="file" accept="image/*" class="file-input" id="img4" hidden>
+                <label for="img4" class="icon d-flex justify-content-center align-items-center w-100 h-100">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="40" height="40">
+                    <path fill="rgb(107, 107, 107)"
+                      d="M352 128C352 110.3 337.7 96 320 96C302.3 96 
+                      288 110.3 288 128L288 288L128 288C110.3 288 
+                      96 302.3 96 320C96 337.7 110.3 352 128 
+                      352L288 352L288 512C288 529.7 302.3 544 
+                      320 544C337.7 544 352 529.7 352 512L352 
+                      352L512 352C529.7 352 544 337.7 544 
+                      320C544 302.3 529.7 288 512 288L352 
+                      288L352 128z"/>
+                  </svg>
+                </label>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="img-upload-slot position-relative">
+                <input type="file" accept="image/*" class="file-input" id="img5" hidden>
+                <label for="img5" class="icon d-flex justify-content-center align-items-center w-100 h-100">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="40" height="40">
+                    <path fill="rgb(107, 107, 107)"
+                      d="M352 128C352 110.3 337.7 96 320 96C302.3 96 
+                      288 110.3 288 128L288 288L128 288C110.3 288 
+                      96 302.3 96 320C96 337.7 110.3 352 128 
+                      352L288 352L288 512C288 529.7 302.3 544 
+                      320 544C337.7 544 352 529.7 352 512L352 
+                      352L512 352C529.7 352 544 337.7 544 
+                      320C544 302.3 529.7 288 512 288L352 
+                      288L352 128z"/>
+                  </svg>
+                </label>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="img-upload-slot position-relative">
+                <input type="file" accept="image/*" class="file-input" id="img6" hidden>
+                <label for="img6" class="icon d-flex justify-content-center align-items-center w-100 h-100">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="40" height="40">
+                   <path fill="rgb(107, 107, 107)"
+                      d="M352 128C352 110.3 337.7 96 320 96C302.3 96 
+                      288 110.3 288 128L288 288L128 288C110.3 288 
+                      96 302.3 96 320C96 337.7 110.3 352 128 
+                      352L288 352L288 512C288 529.7 302.3 544 
+                      320 544C337.7 544 352 529.7 352 512L352 
+                      352L512 352C529.7 352 544 337.7 544 
+                      320C544 302.3 529.7 288 512 288L352 
+                      288L352 128z"/>
+                  </svg>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</div>
+
+        <!-- <div class=" mt-4">
+                <div class="row g-3">
+                  <div class="col-4">
+                      <label for="img1" class="form-label">Rasm 1</label>
+                      <input class="form-control form-control-lg" type="file" id="img1" name="img1" accept="image/*">
+                  </div>
+
+                  <div class="col-4">
+                      <label for="img2" class="form-label">Rasm 2</label>
+                      <input class="form-control form-control-lg" type="file" id="img2" name="img2" accept="image/*">
+                  </div>
+
+                  <div class="col-4">
+                      <label for="img3" class="form-label">Rasm 3</label>
+                      <input class="form-control form-control-lg" type="file" id="img3" name="img3" accept="image/*">
+                  </div>
+
+                  <div class="col-4">
+                      <label for="img4" class="form-label">Rasm 4</label>
+                      <input class="form-control form-control-lg" type="file" id="img4" name="img4" accept="image/*">
+                  </div>
+
+                  <div class="col-4">
+                      <label for="img5" class="form-label">Rasm 5</label>
+                      <input class="form-control form-control-lg" type="file" id="img5" name="img5" accept="image/*">
+                  </div>
+
+                  <div class="col-4">
+                      <label for="img6" class="form-label">Rasm 6</label>
+                      <input class="form-control form-control-lg" type="file" id="img6" name="img6" accept="image/*">
+                  </div>
+                </div>
+
+                <div class="mt-3">
+                    <button type="submit" class="btn btn-primary"button-for-hover >Yuklash</button>
+                </div>
+        </div> -->
+        <div class="button-group text-center mt-5">
+          <!-- 1. Faylni ko‘chirib olish tugmasi -->
+          <button type="button" disabled class="btn btn-primary button-for-hover btn-download">
+            <svg xmlns="http://www.w3.org/2000/svg" style="width:16px; height:16px;" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="white" d="M297.4 566.6C309.9 579.1 330.2 579.1 342.7 566.6L502.7 406.6C515.2 394.1 515.2 373.8 502.7 361.3C490.2 348.8 469.9 348.8 457.4 361.3L352 466.7L352 96C352 78.3 337.7 64 320 64C302.3 64 288 78.3 288 96L288 466.7L182.6 361.3C170.1 348.8 149.8 348.8 137.3 361.3C124.8 373.8 124.8 394.1 137.3 406.6L297.3 566.6z"/></svg>
+            <span>yuklab olish</span>
+          </button>
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+          <!-- 2. Tasdiqlash tugmasi -->
+          <button type="button"  class="btn btn-primary button-for-hover finish-tasdiqlash">
+            Tasdiqlash
+          </button>
+
+          <!-- 3. Yangilash (reset) tugmasi -->
+          <button type="reset" class="btn btn-danger">
+            <svg xmlns="http://www.w3.org/2000/svg" style="width:16px; height:16px;" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="white" d="M552 256L408 256C398.3 256 389.5 250.2 385.8 241.2C382.1 232.2 384.1 221.9 391 215L437.7 168.3C362.4 109.7 253.4 115 184.2 184.2C109.2 259.2 109.2 380.7 184.2 455.7C259.2 530.7 380.7 530.7 455.7 455.7C463.9 447.5 471.2 438.8 477.6 429.6C487.7 415.1 507.7 411.6 522.2 421.7C536.7 431.8 540.2 451.8 530.1 466.3C521.6 478.5 511.9 490.1 501 501C401 601 238.9 601 139 501C39.1 401 39 239 139 139C233.3 44.7 382.7 39.4 483.3 122.8L535 71C541.9 64.1 552.2 62.1 561.2 65.8C570.2 69.5 576 78.3 576 88L576 232C576 245.3 565.3 256 552 256z"/></svg>
+            Yangilash
+          </button>
+        </div>
+    </form>
+  </div>
+
+ <script src="{% static 'bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js' %}"></script>
+  <script type="module" src="{% static 'js/main.js' %}"></script>
+  <script type="module" src="{% static 'js/car-model.js' %}"></script>
+  <script type="module" src="{% static 'js/functions.js' %}"></script>
+  <script type="module" src="{% static 'js/kuzov-turlari.js' %}"></script>
+  <script type="module" src="{% static 'js/kuzov-yechib-ornatish.js' %}"></script>
+  <script type="module" src="{% static 'js/ichki-detallar-yechib-ornatish.js' %}"></script>
+  <script type="module" src="{% static 'js/bozor-bahosi.js' %}"></script>
+  <script type="module" src="{% static 'js/tanlangan-detallar.js' %}"></script>
+  <script type="module" src="{% static 'js/materials.js' %}"></script>
+  <script type="module" src="{% static 'js/yechiladiganlar-tamir.js' %}"></script>
+  <script type="module" src="{% static 'js/yechilmaydiganlar-tamir.js' %}"></script>
+  <script type="module" src="{% static 'js/cars.js' %}"></script>
+  <script type="module" src="{% static 'js/narxlar.js' %}"></script>
+  <script type="module" src="{% static 'js/UTC.js' %}"></script>
+</body>
+</html>

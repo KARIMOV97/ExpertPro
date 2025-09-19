@@ -1,0 +1,483 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair', 'Display',sans-serif !important;
+}
+/* #fff0f0  ,  #fffbf0 , #edfff1 , #ecf8e8*/
+body{
+    background-color: #ecf8e8 !important;
+}
+h6{
+    display: flex;
+}
+.alert-box{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.alert{
+  position: absolute !important;
+  width: 250px;
+  top:-50px;
+}
+pre{
+    color: red;
+    padding-left: 3px;
+    margin-bottom: 0px !important;
+    display: none !important;
+}
+.show-star {
+  display: inline !important;
+}
+.firm-name{
+    text-transform: capitalize;
+    font-size: 72px;
+    margin: 50px 0;
+    color: #636470 !important;
+}
+.information{
+    position: absolute;
+    top: 160px;
+    left: 305px;
+}
+.container{
+    width: 60% !important;
+    margin: auto;
+    background-color: rgb(222 238 255);
+    color: #686a76;
+    padding: 100px 50px!important;
+    margin-bottom: 100px;
+}
+label{
+    cursor: pointer;
+}
+.section{
+    margin-bottom: 30px;
+}
+.identification{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+
+.title{
+    margin-top: -22px;
+    margin-bottom: 20px;
+}
+#year{
+    width: 100%;
+    padding: 15px !important;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    color: rgb(107, 107, 107);
+}
+.colorInput{
+    width: 100%;
+}
+.colorInput input{
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+}
+.radio{
+    display: flex;
+}
+.dvigatel-number-input{
+    text-transform: uppercase;
+}
+.external-view{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.market-price{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.analogue{
+    margin-bottom: 20px;
+}
+.analogue > p{
+    margin-bottom: 0px !important;
+}
+.hisoblash{
+    margin: 30px auto;
+}
+.price{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+}
+.inputs{
+    margin: 0px 10px;
+}
+.list{
+    padding: 0px !important;
+}
+.list-iteam{
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    padding: 10px;
+    list-style-type:none;
+    color: white;
+    border: 3px solid black;
+    background-color: rgb(67 67 67);
+}
+.list-iteam > i{
+    font-size: 22px;
+}
+.accordion-collapse {
+    z-index: 100;
+    /* width: 54.7%; */
+    background-color: white; /* Orqa fon ko‘rinishi uchun */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* ixtiyoriy */
+}  
+.form-control{
+    width: 97%;
+    height: 50px;
+}
+.uppercase{
+    text-transform: uppercase;
+}
+.form-select{
+    height: 50px;
+}
+.form-label{
+    width: 100%;
+}
+.uppercase{
+    text-transform: uppercase;
+}
+.spares{
+    display: flex;
+    flex-direction: column;
+}
+.spare{
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: white;
+}
+.spare > img{
+    width: 50px;
+    height: 50px;
+}
+.spare p{
+    padding: 0px 10px;
+    margin: 0 !important;
+}
+.trash-icon svg, .edit-icon svg{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+.outline-none{
+    outline: none;
+}
+.trash-icon:hover svg{
+    transform: scale(1.2);
+}
+.number-of-items{
+    width: 100px;
+    padding: 0px 20px;
+    border: none;
+    outline: none;
+}
+.stuff{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+}
+.img-box{
+    width: 60px;
+    height: 50px;
+    padding: 5px;
+}
+.stuff-input{
+    width: 80px ;
+    padding: 10px 15px;
+    border: none ;
+    outline: none ;
+    text-align: center;
+}
+.miqdor{
+    width: 110px;
+}
+.mony{
+    width: 200px;
+    border: none;
+    outline: none;
+}
+.form-check{
+    display: flex;
+    align-items: center;
+    margin-top: 0px !important;
+}
+.form-check-label{
+    margin-top: 0px ;
+}
+#level{
+    border: none;
+    outline: none;
+}
+.last-checbox{
+
+    font-size: 20px;
+}
+.accordion-add-element-height input{
+    height: 42px;
+}
+/* Container uchun */
+#imageGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem; /* col-gutter o'rni */
+}
+label, input, .form-select {
+    display: inline-block; /* yoki block/flex */
+    transition: all 0.1s ease; /* transition alohida aniqlash tavsiya qilinadi */
+    transform-origin: center; /* markazdan kattalashishi uchun */
+}
+.button-for-hover, .btn-danger, .accordion-button {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    color: #333;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Hover effekti (slotlardagi kabi) */
+.button-for-hover:hover, .btn-danger:hover, .accordion-button:hover {
+    background-color: #f9fbff;
+    border-color: #007bff;
+    transform: scale(1.01);
+}
+
+/* Agar kerak bo‘lsa active holat */
+.button-for-hover:active, .btn-danger:active, .accordion-button:active {
+    transform: scale(0.98);
+    background-color: #d6e4ff;
+}
+/* Har bir slot */
+.img-upload-slot {
+    height: 145px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.1s ease;
+    overflow: hidden;
+}
+
+/* Hover effekti */
+.img-upload-slot:hover {
+    border-color: #007bff;
+    background-color: #e9f2ff;
+    transform: scale(1.1);
+}
+.img-upload-slot label{
+    border: 3px dashed rgba(196, 196, 196, 0.801);
+}
+.form-select:hover, input:hover{
+    border-color: #007bff;
+    background-color: #e9f2ff;
+    transform: scale(1.01);
+}
+/* Ichidagi ikonka yoki span */
+.img-upload-slot i,
+.img-upload-slot span {
+    color: #777;
+    font-size: 24px;
+    pointer-events: none; /* ikonka bosilsa file inputga ta'sir qilmasin */
+}
+
+/* Fayl inputni yashirish */
+.img-upload-slot .file-input {
+    display: none;
+}
+
+/* Rasmlar joylashtirilsa */
+.img-upload-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* SVG ikon uchun styling */
+.img-upload-slot span svg {
+    width: 40px;
+    height: 40px;
+    fill: rgb(107, 107, 107);
+}
+
+/* .img-upload-slot img {
+    pointer-events: none; 
+.img-upload-slot button {
+    pointer-events: auto;
+} */
+/* ===================== */
+/* Umumiy stillar        */
+/* ===================== */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* ===================== */
+/* Mobil (max-width: 576px) */
+/* ===================== */
+@media (max-width: 576px) {
+  .firm-name {
+    font-size: 20px;
+  }
+
+  .container {
+    padding: 15px !important;
+  }
+
+  h1.title {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  label h6 {
+    font-size: 14px;
+  }
+
+  input, select, button {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
+
+  .accordion-button {
+    font-size: 14px;
+  }
+
+  .button-group button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .row .col {
+    width: 100% !important;
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 576px) {
+  .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media (min-width: 577px) and (max-width: 768px) {
+  .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .row .col,
+  .row [class*="col-"] {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Pastidan joy bo‘lishi uchun */
+  .row .col,
+  .row [class*="col-"] {
+    margin-bottom: 12px;
+  }
+}
+@media (max-width: 768px) {
+  .bozor-bahosi-section .analogue .price .col {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 12px;
+  }
+  .for-ichki-detallar-select .coefficient{
+    display: none !important;
+  }
+}
+/* Telefon va planshetda Analig inputlarini ustma-ust qilish */
+@media (max-width: 768px) {
+
+  .bozor-bahosi-section .analogue .price {
+    display: block !important;
+  }
+
+  .bozor-bahosi-section .analogue .price label.col.inputs {
+    display: block !important;
+    flex: unset !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-bottom: 12px;
+  }
+
+  .bozor-bahosi-section .analogue .price input {
+    width: 100% !important;
+  }
+}
+
+/* ===================== */
+/* Planshet (577px – 768px) */
+/* ===================== */
+@media (min-width: 577px) and (max-width: 768px) {
+  .firm-name {
+    font-size: 24px;
+  }
+
+  h1.title {
+    font-size: 20px;
+  }
+
+  input, select, button {
+    font-size: 15px;
+  }
+
+  .row .col {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 12px;
+  }
+}
+
+/* ===================== */
+/* Katta ekran (769px+)  */
+/* ===================== */
+@media (max-width: 769px) {
+
+  .firm-name {
+    font-size: 32px;
+  }
+
+  .container {
+    max-width: 1140px;
+  }
+
+  h1.title {
+    font-size: 22px;
+  }
+  .analogue{
+    margin-bottom: 100px !important;
+  }
+}
