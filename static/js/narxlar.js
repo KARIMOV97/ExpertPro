@@ -32,14 +32,14 @@ document.querySelector('.boyoqlash-check-button').addEventListener('click', asyn
 
     // yechiladigan detallardan fetch
     const promisesYechiladigan = Array.from(yechiladiganBoyoqlash).map(detal => {
-        return fetch(`http://127.0.0.1:8000/api/boyoqlash-yechiladigan/?detail=${detal.value}&car_model=${carModelId}`)
+        return fetch(`/api/boyoqlash-yechiladigan/?detail=${detal.value}&car_model=${carModelId}`)
             .then(res => res.json())
             .then(data => (data.length > 0 ? data[0].vaqt : 0));
     });
 
     // yechilmaydigan detallardan fetch
     const promisesYechilmaydigan = Array.from(yechilmaydiganBoyoqlash).map(detal => {
-        return fetch(`http://127.0.0.1:8000/api/boyoqlash-yechilmaydigan/?detail=${detal.value}&car_model=${carModelId}`)
+        return fetch(`/api/boyoqlash-yechilmaydigan/?detail=${detal.value}&car_model=${carModelId}`)
             .then(res => res.json())
             .then(data => (data.length > 0 ? data[0].vaqt : 0));
     });
@@ -86,14 +86,14 @@ document.querySelector('.boyoqlash-check-button').addEventListener('click', asyn
 
     // yechiladigan detallardan fetch
     const promisesYechiladigan = Array.from(yechiladiganSilliqlash).map(detal => {
-        return fetch(`http://127.0.0.1:8000/api/silliqlash-yechiladigan/?detail=${detal.value}&car_model=${carModelId}`)
+        return fetch(`/api/silliqlash-yechiladigan/?detail=${detal.value}&car_model=${carModelId}`)
             .then(res => res.json())
             .then(data => (data.length > 0 ? data[0].vaqt : 0));
     });
 
     // yechilmaydigan detallardan fetch
     const promisesYechilmaydigan = Array.from(yechilmaydiganSilliqlash).map(detal => {
-        return fetch(`http://127.0.0.1:8000/api/silliqlash-yechilmaydigan/?detail=${detal.value}&car_model=${carModelId}`)
+        return fetch(`/api/silliqlash-yechilmaydigan/?detail=${detal.value}&car_model=${carModelId}`)
             .then(res => res.json())
             .then(data => (data.length > 0 ? data[0].vaqt : 0));
     });
@@ -159,7 +159,7 @@ document.querySelector(".boyoqlash-check-button").addEventListener('click', asyn
     try {
         let carModelId = document.querySelector('input[name="model"]:checked')?.dataset.id;
         let murakkablikId = document.querySelector('.geometrik-murakkablik-select').value;
-        let res = await fetch(`http://127.0.0.1:8000/api/kuzov-geometrik-murakkablik-coefitsienti/?car_model=${carModelId}&geometrik_murakkablik=${murakkablikId}`);
+        let res = await fetch(`/api/kuzov-geometrik-murakkablik-coefitsienti/?car_model=${carModelId}&geometrik_murakkablik=${murakkablikId}`);
         let data = await res.json();
 
         if (data.length > 0) {
@@ -203,7 +203,7 @@ document.querySelector(".boyoqlash-check-button").addEventListener('click', asyn
         let daraja = li.querySelector('.tamirlash-darajasi-select').value;
         try {
             let res = await fetch(
-                `http://127.0.0.1:8000/api/tamirlash-vaqti-yechiladigan/?car_model=${carModelId}&detail=${detailId}&daraja=${daraja}`
+                `/api/tamirlash-vaqti-yechiladigan/?car_model=${carModelId}&detail=${detailId}&daraja=${daraja}`
             );
             let data = await res.json();
             if (data.length > 0) {
@@ -224,7 +224,7 @@ document.querySelector(".boyoqlash-check-button").addEventListener('click', asyn
             let daraja = li.querySelector('.tamirlash-darajasi-select').value;
             try {
                 let res = await fetch(
-                    `http://127.0.0.1:8000/api/tamirlash-vaqti-yechilmaydigan/?car_model=${carModelId}&detail=${detailId}&daraja=${daraja}`
+                    `/api/tamirlash-vaqti-yechilmaydigan/?car_model=${carModelId}&detail=${detailId}&daraja=${daraja}`
                 );
                 let data = await res.json();
                 if (data.length > 0) {

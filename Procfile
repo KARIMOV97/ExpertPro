@@ -1,1 +1,1 @@
-web: gunicorn 'expertPro.wsgi' 
+web: gunicorn expertPro.wsgi

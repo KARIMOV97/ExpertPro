@@ -2,7 +2,7 @@
 const materialsList = document.querySelector(".materials-list-last");
 
 // 2. Backend API dan Materiallar ro'yxatini olish
-fetch("http://127.0.0.1:8000/api/materiallar")  // API endpoint sizning Django url.py ga mos bo'lishi kerak
+fetch("/api/materiallar")  // API endpoint sizning Django url.py ga mos bo'lishi kerak
   .then(response => response.json())
   .then(data => {
     // 3. Har bir material uchun li yaratish

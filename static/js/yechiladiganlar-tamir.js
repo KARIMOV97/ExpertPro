@@ -2,7 +2,7 @@
 const ul = document.querySelector(".yechiladigan-detallar-tamir-ul");
 
 // Birinchi fetch: Detallarni olish
-fetch("http://127.0.0.1:8000/api/yechiladigan-detallar-tamirlash/")
+fetch("/api/yechiladigan-detallar-tamirlash/")
   .then(response => response.json())
   .then(data => {
     ul.innerHTML = ""; // eski elementlarni tozalash

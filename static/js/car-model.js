@@ -1,7 +1,7 @@
 import { apiGet, apiPost, apiPut, apiDelete, showBootstrapAlert } from './functions.js';
 const API = {}; // bu object ichida endpointlar bo‘ladi
 
-fetch("http://127.0.0.1:8000/api")
+fetch("/api")
   .then(res => res.json())
   .then(data => {
     for (const [key, url] of Object.entries(data)) {

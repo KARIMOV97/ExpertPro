@@ -39,7 +39,7 @@ document.querySelector('.finish-tasdiqlash').addEventListener('click', async (e)
 
     async function getVaqt(carModelId, detailId, darajaId) {
         try {
-            let res = await fetch("http://127.0.0.1:8000/api/tamirlash-vaqti-yechiladigan/");
+            let res = await fetch("/api/tamirlash-vaqti-yechiladigan/");
             let data = await res.json();
 
             // kerakli obyektni topamiz
@@ -56,7 +56,7 @@ document.querySelector('.finish-tasdiqlash').addEventListener('click', async (e)
     }
      async function getVaqtYechilmaydigan(carModelId, detailId, darajaId) {
         try {
-            let res = await fetch("http://127.0.0.1:8000/api/tamirlash-vaqti-yechilmaydigan/");
+            let res = await fetch("/api/tamirlash-vaqti-yechilmaydigan/");
             let data = await res.json();
 
             // kerakli obyektni topamiz
@@ -149,7 +149,7 @@ document.querySelector('.finish-tasdiqlash').addEventListener('click', async (e)
 //-----------------------------------------------------------Almashtirish uchun UTC----------------------------------------------------------------------------------
       let jamiVaqtAlmashtirishUTC = 0;
         try {
-            const res = await fetch(`http://127.0.0.1:8000/api/almashtiriladigan-UTC`);
+            const res = await fetch(`/api/almashtiriladigan-UTC`);
             const json = await res.json();
             const kuzovItems = document.querySelectorAll('.spares .spare[data-type="kuzov"]');
             const almashtirishIds = Array.from(kuzovItems).map(item => item.dataset.detailId);
@@ -199,7 +199,7 @@ document.querySelector('.finish-tasdiqlash').addEventListener('click', async (e)
     let sumTamir3 = 0;
     async function getCoefficients() {
         try {
-            const response = await fetch('http://127.0.0.1:8000/api/tamirlash-yechiladigan-utc/');
+            const response = await fetch('/api/tamirlash-yechiladigan-utc/');
             const data = await response.json();
             data.forEach(item => {
                 yechiladiganDetalTamirTuri.forEach(item2 => {
@@ -213,7 +213,7 @@ document.querySelector('.finish-tasdiqlash').addEventListener('click', async (e)
 
                 }})
             }) 
-            const response2 = await fetch('http://127.0.0.1:8000/api/tamirlash-yechilmaydigan-utc/');
+            const response2 = await fetch('/api/tamirlash-yechilmaydigan-utc/');
             const data2 = await response2.json();
             data2.forEach(item => {
                 yechilmaydiganDetalTamirTuri.forEach(item2 => {
@@ -353,7 +353,7 @@ document.querySelector('.finish-tasdiqlash').addEventListener('click', async (e)
         let GeometrikMurakkablikCoefficienti
         async function getCoefficient(modelID, KGMK) {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/kuzov-geometrik-murakkablik-coefitsienti/?car_model=${modelID}&geometrik_murakkablik=${KGMK}`);
+                const response = await fetch(`/api/kuzov-geometrik-murakkablik-coefitsienti/?car_model=${modelID}&geometrik_murakkablik=${KGMK}`);
                 const data = await response.json();
                 return data[0]?.coefficient; // data bo'lmasa undefined qaytaradi
             } catch (err) {
@@ -387,7 +387,7 @@ document.querySelector('.finish-tasdiqlash').addEventListener('click', async (e)
             .filter(url => url); // faqat tanlanganlar
          async function getShablon() {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/shablonlar`);
+                const response = await fetch(`/api/shablonlar`);
                 const data = await response.json();
                 return data.map(item => item.fayl_nomi)
             } catch (err) {
@@ -526,7 +526,7 @@ document.querySelector('.finish-tasdiqlash').addEventListener('click', async (e)
     };
    
     // So‘rov yuborish
-    fetch("http://127.0.0.1:8000/generate-word/", {
+    fetch("/generate-word/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -543,7 +543,7 @@ document.querySelector('.finish-tasdiqlash').addEventListener('click', async (e)
         }
     })
     .catch(err => console.error("Xatolik:", err));
-    // fetch("http://127.0.0.1:8000/save-car/", {
+    // fetch("/save-car/", {
     //     method: "POST",
     //     headers: { "Content-Type": "application/json" },
     //     body: JSON.stringify(data),

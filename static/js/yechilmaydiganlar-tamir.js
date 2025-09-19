@@ -2,7 +2,7 @@
 const ul = document.querySelector(".yechilmaydigan-detallar-tamir-ul");
 
 // Birinchi fetch: Yechilmaydigan detallarni olish
-fetch("http://127.0.0.1:8000/api/yechilmaydigan-detallar-tamir/")
+fetch("/api/yechilmaydigan-detallar-tamir/")
   .then(response => response.json())
   .then(data => {
     ul.innerHTML = ""; // eski elementlarni tozalash
@@ -34,7 +34,7 @@ fetch("http://127.0.0.1:8000/api/yechilmaydigan-detallar-tamir/")
       const select = li.querySelector(".tamirlash-darajasi-select");
 
       // Endi ikkinchi fetch: Tamirlash darajasi yuklash
-      fetch("http://127.0.0.1:8000/api/tamirlash-darajasi/")
+      fetch("/api/tamirlash-darajasi/")
         .then(res => res.json())
         .then(darajalar => {
           select.innerHTML = ""; // eski optionlarni tozalash
