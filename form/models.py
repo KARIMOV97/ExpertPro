@@ -25,7 +25,7 @@ class Expert(models.Model):
         return self.name
 
 # Car Model
-class CarModel(models.Model):
+class CarModel(models.Model): #demakki gitga boglagansiz deploy qilganizdan keyin make migrations qildizmi server da uni qaqnday qildiz
     name = models.CharField(max_length=100)
 
     class Meta:
